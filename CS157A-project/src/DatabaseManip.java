@@ -9,8 +9,10 @@ import java.sql.SQLException;
 
 /**
  * Java project for CS 157A
- * Group Number: 6
+ * Group Number: 9
  * Professor: Ahmed Ezzat
+ *
+ * @author Joshua Liang 010380383
  * Goal: Use JDBC to create a Books database, populate it, and then execute different
  * SQL statements to query or manipulate the Books database.
  */
