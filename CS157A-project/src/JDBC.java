@@ -17,7 +17,7 @@ import java.sql.SQLException;
  * SQL statements to query or manipulate the Books database.
  */
 
-public class DatabaseManip {
+public class JDBC {
     public String username = "root";
     public String password = "password";
 
@@ -445,30 +445,30 @@ public class DatabaseManip {
     public static void main(String[] args) {
 
         // Establish a process ( i.e. connection to local mysql database )
-        DatabaseManip databaseManip = new DatabaseManip();
+        JDBC JDBC = new JDBC();
 
 
         try {
 
             System.out.println("Attempting to log into localhost!");
             // Enter user and password for sql connection. Change this to make it work locally.
-            databaseManip.loginToDB();
+            JDBC.loginToDB();
             System.out.println("Successfully logged in");
 
             System.out.println("Initializing tables!");
-            databaseManip.populateTables();
+            JDBC.populateTables();
             System.out.println("Tables initialized correctly!");
 
 
             // ---------- IMPLEMENTING SQL QUERIES TO MANIPULATE THE DATABASE ----------
-            databaseManip.selectAllauthors();
-            databaseManip.selectPublishers();
-            databaseManip.specificPublisher();
-            databaseManip.addAuthor();
-            databaseManip.editAuthor();
-            databaseManip.addTitle();
-            databaseManip.addPublisher();
-            databaseManip.editPublisher();
+            JDBC.selectAllauthors();
+            JDBC.selectPublishers();
+            JDBC.specificPublisher();
+            JDBC.addAuthor();
+            JDBC.editAuthor();
+            JDBC.addTitle();
+            JDBC.addPublisher();
+            JDBC.editPublisher();
 
 
             // catch any exceptions that might occur
