@@ -30,7 +30,7 @@ public class JDBC {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306?useSSL=false", username, password);
             statement = connection.createStatement();
         } catch (SQLException ex) {
-            System.out.println("FAILURE LOGGING IN. CHECK USERNAME AND PASSWORD!");
+            System.out.println("Username or password incorrect.");
         }
     }
 
@@ -453,11 +453,9 @@ public class JDBC {
             System.out.println("Attempting to log into localhost!");
             // Enter user and password for sql connection. Change this to make it work locally.
             JDBC.loginToDB();
-            System.out.println("Successfully logged in");
 
-            System.out.println("Initializing tables!");
             JDBC.populateTables();
-            System.out.println("Tables initialized correctly!");
+
 
 
             // ---------- IMPLEMENTING SQL QUERIES TO MANIPULATE THE DATABASE ----------
