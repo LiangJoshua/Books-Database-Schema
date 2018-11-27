@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51866d16-ee8e-45d5-b994-7b7d1a69177c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/JDBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/JDBC.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/JDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JDBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/authorList.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/authorList.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/authorISBN.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/authorISBN.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/publishers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/publishers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/titleTable.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/titleTable.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,8 +61,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/JDBC.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="96" column="70" lean-forward="true" selection-start-line="96" selection-start-column="70" selection-end-line="96" selection-end-column="70" />
+            <state relative-caret-position="3365">
+              <caret line="359" column="71" selection-start-line="359" selection-start-column="66" selection-end-line="359" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -80,6 +81,8 @@
       <find>employe</find>
       <find>editpubli</find>
       <find>editpublisher</find>
+      <find>isbn</find>
+      <find>title</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -208,8 +211,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/JDBC.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="96" column="70" lean-forward="true" selection-start-line="96" selection-start-column="70" selection-end-line="96" selection-end-column="70" />
+        <state relative-caret-position="3365">
+          <caret line="359" column="71" selection-start-line="359" selection-start-column="66" selection-end-line="359" selection-end-column="71" />
         </state>
       </provider>
     </entry>
