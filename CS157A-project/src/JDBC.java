@@ -141,8 +141,10 @@ public class JDBC {
 
             // iterate through the publisher ID list file and insert them into the publisher ID list
             ResultSet rs = statement.executeQuery("SELECT publisherID FROM publishers;");
+
             while (rs.next()) {
                 PID.add(rs.getInt("publisherID"));
+
             }
             System.out.println();
 
@@ -158,10 +160,10 @@ public class JDBC {
                 float price = Float.parseFloat(hold[5]); // price of the book
 
                 statement.execute("INSERT INTO title(isbn, title, editionNumber, Year, publisherID, price)VALUES ('" + isbn + "','" + title2 +
-                        "','" + edition + "','" + year + "','" + PID.get(pid) + "','" + price + "')");
+                        "','" + edition + "','" + year + "','" + PID.get(pid - 1) + "','" + price + "')");
 
                 System.out.println("INSERT INTO title(isbn, title, editionNumber, Year, publisherID, price)VALUES ('" + isbn + "','" + title2 +
-                        "','" + edition + "','" + year + "','" + PID.get(pid) + "','" + price + "');");
+                        "','" + edition + "','" + year + "','" + PID.get(pid - 1) + "','" + price + "');");
 
                 PIhold++;
             }
@@ -249,8 +251,8 @@ public class JDBC {
         // Step 3
         System.out.println("select a specific publisher and list all books published by the publisher (include the title, year, and ISBN number. order the information alphabetically by title)");
         try {
-            ResultSet publisherID = statement.executeQuery("select publisherID from publishers Where publisherName = 'ThomasReuters';");
-            System.out.println("select publisherID from publishers Where publisherName = 'ThomasReuters';\n");
+            ResultSet publisherID = statement.executeQuery("select publisherID from publishers Where publisherName = 'Lulu';");
+            System.out.println("select publisherID from publishers Where publisherName = 'Lulu';\n");
             System.out.println("publisherID\n");
             int PID2 = 0;
             while (publisherID.next()) {
@@ -280,9 +282,9 @@ public class JDBC {
         try {
             // Step 4
             System.out.println("adds new author and other information related to other tables");
-            statement.execute("Insert INTO authors(first, last) VALUES ('" + "Tom" + "','" + "Tran" + "')");
-            System.out.println("Insert INTO authors(first, last) VALUES ('" + "Tom" + "','" + "Tran" + "')\n");
-            ResultSet updateID = statement.executeQuery("select authorID from authors where first = 'Tom' AND last = 'Tran';");
+            statement.execute("Insert INTO authors(first, last) VALUES ('" + "Joshua" + "','" + "Liang" + "')");
+            System.out.println("Insert INTO authors(first, last) VALUES ('" + "Joshua" + "','" + "Liang" + "')\n");
+            ResultSet updateID = statement.executeQuery("select authorID from authors where first = 'Joshua' AND last = 'Liang';");
 
             int insertID = 0;
             while (updateID.next()) {
@@ -312,9 +314,9 @@ public class JDBC {
             // Step 5
             System.out.println();
             System.out.println("edit/update the existing information about an author i..e the name");
-            statement.execute("UPDATE authors SET last='Dinh' where authorID=16;");
+            statement.execute("UPDATE authors SET last='Leinbach', first='Justin' where authorID=16;");
             System.out.println();
-            System.out.println("UPDATE authors SET last='Dinh' where authorID=16;\n");
+            System.out.println("UPDATE authors SET last='Leinbach', first='Justin' where authorID=16;\n");
 
             // Step 5 (continued)
             // check to make sure the update happened
@@ -455,7 +457,6 @@ public class JDBC {
             JDBC.loginToDB();
 
             JDBC.populateTables();
-
 
 
             // ---------- IMPLEMENTING SQL QUERIES TO MANIPULATE THE DATABASE ----------
