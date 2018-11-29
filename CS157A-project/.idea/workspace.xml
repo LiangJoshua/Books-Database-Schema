@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="51866d16-ee8e-45d5-b994-7b7d1a69177c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JDBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/JDBC.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/authorISBN.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/authorISBN.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/titleTable.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/titleTable.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,6 +20,7 @@
         <counts>
           <entry key="project.closed" value="8" />
           <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.15" value="1" />
@@ -26,7 +28,7 @@
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.opened" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -44,12 +46,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="8" />
-          <entry key="java" value="533" />
+          <entry key="java" value="838" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="533" />
+          <entry key="JAVA" value="838" />
           <entry key="PLAIN_TEXT" value="8" />
         </counts>
       </usages-collector>
@@ -60,11 +62,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/JDBC.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="89" column="51" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="51" />
-              <folding>
-                <element signature="e#6673#6682#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="383">
+              <caret line="452" column="42" lean-forward="true" selection-start-line="452" selection-start-column="42" selection-end-line="452" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -83,18 +82,22 @@
       <find>employe</find>
       <find>editpubli</find>
       <find>editpublisher</find>
-      <find>isbn</find>
       <find>15</find>
       <find>16</find>
       <find>title</find>
       <find>scan</find>
-      <find>titlescan</find>
       <find>PIhold</find>
       <find>get</find>
       <find>get(</find>
-      <find>addauthor</find>
       <find>liang</find>
       <find>dinh</find>
+      <find>isbn</find>
+      <find>titlescan</find>
+      <find>addauthor</find>
+      <find>addtitl</find>
+      <find>isbnscan</find>
+      <find>addtitle</find>
+      <find>from title where publisher</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -124,6 +127,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -141,7 +145,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -179,7 +182,7 @@
     <frame x="48" y="55" width="1392" height="765" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27555555" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27925926" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -223,11 +226,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/JDBC.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="89" column="51" selection-start-line="89" selection-start-column="35" selection-end-line="89" selection-end-column="51" />
-          <folding>
-            <element signature="e#6673#6682#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="383">
+          <caret line="452" column="42" lean-forward="true" selection-start-line="452" selection-start-column="42" selection-end-line="452" selection-end-column="42" />
         </state>
       </provider>
     </entry>

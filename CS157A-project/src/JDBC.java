@@ -359,9 +359,9 @@ public class JDBC {
         try {
             // Step 6
             System.out.println();
-            ResultSet old = statement.executeQuery("select * from title where publisherID = 3;");
+            ResultSet old = statement.executeQuery("select * from title where publisherID = 15;");
             System.out.println("Before Add new info to title");
-            System.out.println("select * from title where publisherID = 3;");
+            System.out.println("select * from title where publisherID = 15;");
 
             while (old.next()) {
                 System.out.println();
@@ -372,13 +372,12 @@ public class JDBC {
 
             System.out.println("add a new title for an author");
             System.out.println();
-            System.out.println("INSERT INTO title(isbn, title, editionNumber, Year, publisherID, price)VALUES ('5555555555', 'My Life' ,'1' ,'2017' ,3 ,'20.00');");
-            statement.execute("INSERT INTO title(isbn, title, editionNumber, Year, publisherID, price)VALUES ('5555555555', 'My Life' ,'1' ,'2017' ,3 ,'20.00')");
+            System.out.println("INSERT INTO title(isbn, title, editionNumber, Year, publisherID, price)VALUES ('9789655171', 'CS157A' ,'1' ,'2018' ,15 ,'9.99');");
+            statement.execute("INSERT INTO title(isbn, title, editionNumber, Year, publisherID, price)VALUES ('9789655171', 'CS157A' ,'1' ,'2018' ,15 ,'9.99')");
             System.out.println();
 
-            ResultSet addNew = statement.executeQuery("select * from title where publisherID = 3;");
-            System.out.println("After add new infor to title");
-            System.out.println("select * from title where publisherID = 3;");
+            ResultSet addNew = statement.executeQuery("select * from title where publisherID = 15;");
+            System.out.println("select * from title where publisherID = 15;");
 
             while (addNew.next()) {
                 System.out.println();
@@ -387,9 +386,14 @@ public class JDBC {
             }
             System.out.println();
 
-            statement.execute("UPDATE authorisbn SET isbn = '5555555555' where authorID = 16;");
+            statement.execute("INSERT INTO authorISBN(authorID, isbn)VALUES ('16', '9789655171');");
+            ResultSet newAuthorISBN = statement.executeQuery("select * from authorISBN;");
+            System.out.println("Select * from authorISBN;\n");
+            System.out.printf("%-10s %-10s %-10s \n", "authorID", "first", "last");
+            while (newAuthorISBN.next()) {
+                System.out.printf("%-20s %-20s \n", newAuthorISBN.getString("authorID"), newAuthorISBN.getString("isbn"));
 
-
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
