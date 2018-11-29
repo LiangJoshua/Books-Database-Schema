@@ -17,6 +17,6 @@ https://dev.mysql.com/downloads/mysql/
 3) Open Terminal and run JDBC.java in correct directory
 ````
 MacBookAIr:~ macadmin$ cd /Users/macadmin/Desktop/GitHub/Books-Database-Schema/CS157A-project/src 
-MacBookAIr:src macadmin$ java *.java
+MacBookAIr:src macadmin$ javac *.java
 MacBookAIr:src macadmin$ java -cp mysql-connector-java-8.0.13.jar:. JDBC
 ````
