@@ -403,12 +403,12 @@ public class JDBC {
         try {
             // Step 7
             System.out.println("add new publish (adds new publisher and update new information for other tables)");
-            statement.execute("Insert INTO publishers(publisherName) VALUES ('" + "Khois work" + "');");
+            statement.execute("Insert INTO publishers(publisherName) VALUES ('" + "CS157A Group 9" + "');");
             System.out.println();
-            System.out.println("Insert INTO publishers(publisherName) VALUES ('" + "Khois work" + "');");
+            System.out.println("Insert INTO publishers(publisherName) VALUES ('" + "CS157A Group 9" + "');");
 
-            ResultSet beforeUp = statement.executeQuery("select * from publishers where publisherID = 16;");
-            System.out.println("select * from publishers where publisherID = 16;");
+            ResultSet beforeUp = statement.executeQuery("select * from publishers;");
+            System.out.println("select * from publishers;");
 
             while (beforeUp.next()) {
                 System.out.println();
@@ -417,6 +417,15 @@ public class JDBC {
                 System.out.printf("%-15s %-15s \n", beforeUp.getString("publisherID"), beforeUp.getString("publisherName"));
             }
 
+            ResultSet AfterUp = statement.executeQuery("select * from publishers where publisherID = 16;");
+            System.out.println("select * from publishers where publisherID = 16;");
+
+            while (AfterUp.next()) {
+                System.out.println();
+                System.out.println("After Edit/Update the existing information about an publishers");
+                System.out.printf("%-15s %-15s \n", "publisherID", "publisherName");
+                System.out.printf("%-15s %-15s \n", AfterUp.getString("publisherID"), AfterUp.getString("publisherName"));
+            }
 
             System.out.println();
         } catch (SQLException e) {

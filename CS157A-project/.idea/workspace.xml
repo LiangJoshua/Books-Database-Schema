@@ -4,8 +4,6 @@
     <list default="true" id="51866d16-ee8e-45d5-b994-7b7d1a69177c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/JDBC.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/JDBC.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JDBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/authorISBN.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/authorISBN.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/titleTable.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/titleTable.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,12 +44,12 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="8" />
-          <entry key="java" value="838" />
+          <entry key="java" value="931" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="838" />
+          <entry key="JAVA" value="931" />
           <entry key="PLAIN_TEXT" value="8" />
         </counts>
       </usages-collector>
@@ -62,8 +60,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/JDBC.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="452" column="42" lean-forward="true" selection-start-line="452" selection-start-column="42" selection-end-line="452" selection-end-column="42" />
+            <state relative-caret-position="415">
+              <caret line="429" column="33" lean-forward="true" selection-start-line="429" selection-start-column="33" selection-end-line="429" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -226,8 +224,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/JDBC.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="452" column="42" lean-forward="true" selection-start-line="452" selection-start-column="42" selection-end-line="452" selection-end-column="42" />
+        <state relative-caret-position="415">
+          <caret line="429" column="33" lean-forward="true" selection-start-line="429" selection-start-column="33" selection-end-line="429" selection-end-column="33" />
         </state>
       </provider>
     </entry>
