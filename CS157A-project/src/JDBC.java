@@ -49,11 +49,9 @@ public class JDBC {
      */
     public void populateTables() {
 
-        // Initialize authorScanners to parse data files containing information to populate into tables
-
         try {
 
-            // If the books database already exists from a previous run, drop it so a new one can be created.
+            // Connects to MySQL Server and drops "BOOKS" database if it already exists
             ResultSet result = connection.getMetaData().getCatalogs();
             while (result.next()) {
                 String databases = result.getString(1);
@@ -61,14 +59,13 @@ public class JDBC {
                     statement.executeUpdate("DROP DATABASE BOOKS;");
                 }
             }
-
+            // Files that will be scanned to populate the proper tables
             Scanner authorScan = new Scanner(new File("authorList.txt"));
             Scanner publisherScan = new Scanner(new File("publishers.txt"));
             Scanner isbnScan = new Scanner(new File("authorISBN.txt"));
             Scanner titleScan = new Scanner(new File("titleTable.txt"));
 
-            // ---------- CREATE DATABASE BOOKS AND INITIALIZE TABLES ----------
-            // Initialization of database "books" and tables
+            // Creates Database "BOOKS" and initialize the tables
             statement.executeUpdate("CREATE DATABASE BOOKS");
             String useDB = "USE books";
             String authors = "CREATE TABLE authors (authorID INTEGER NOT NULL auto_increment, first CHAR(20) NOT NULL, last CHAR(20) NOT NULL, PRIMARY KEY (authorID))";
@@ -76,77 +73,72 @@ public class JDBC {
             String title = "CREATE TABLE title (isbn CHAR(10) NOT NULL, title VARCHAR(500) NOT NULL, editionNumber INTEGER NOT NULL, Year CHAR(4) NOT NULL, publisherID INTEGER NOT NULL, price FLOAT NOT NULL, PRIMARY KEY (isbn), FOREIGN KEY (publisherID) REFERENCES publishers(publisherID))";
             String authorISBN = "CREATE TABLE authorISBN (authorID INTEGER NOT NULL, isbn CHAR(10) NOT NULL, FOREIGN KEY (isbn) REFERENCES title(isbn), FOREIGN KEY (authorID) REFERENCES authors(authorID))";
             statement.execute(useDB);
+            statement.execute(authors);
+            statement.execute(publishers);
+            statement.execute(title);
+            statement.execute(authorISBN);
 
-            // Print out the queries and the creation of the database
+            // Print out the queries and the creation of the database/tables to console
             System.out.println("CREATE DATABASE BOOKS");
-
-            // Print out the execution of the create statements
             System.out.println(useDB + ";\n" +
                     authors + ";\n" +
                     authorISBN + ";\n" +
                     title + ";\n" +
                     publishers + ";\n");
 
-            // execute all statements define for creating the books database and empty tables
-            statement.execute(authors);
-            statement.execute(publishers);
-            statement.execute(title);
-            statement.execute(authorISBN);
 
-            // ---------- INITIALIZE TABLES WITH AT LEAST 15 ENTRIES ----------
-            // insert all authors(first and last name) read from a file and inserted into the authors table
+            // Populate authors table by scanning the first and last names from authorList.txt
             while (authorScan.hasNextLine()) {
                 String next = authorScan.nextLine();
-                String[] hold = next.split(" ");
+                String[] hold = next.split(" "); // Parses the file by " " space to separate first and last name
                 String firstN = hold[0]; // hold first name
                 String lastN = hold[1]; // hold last name
                 statement.execute("Insert INTO authors(first, last) VALUES ('" + firstN + "','" + lastN + "')");
                 System.out.println("Insert INTO authors(first, last) VALUES ('" + firstN + "','" + lastN + "');");
             }
+            // Prints new line to console for formatting purposes
             System.out.println();
 
+            // SQL statement that selects all authors from authors table
             ResultSet rs1 = statement.executeQuery("Select * from authors;");
+
+            // Print out the query to console
             System.out.println("Select * from authors;\n");
             System.out.printf("%-10s %-10s %-10s \n", "authorID", "first", "last");
 
+            // Prints all the authors with their ID, first name, last name, from the authors table to the console
             while (rs1.next()) {
                 System.out.printf("%-10s %-10s %-10s \n", rs1.getString("authorID"), rs1.getString("first"), rs1.getString("last"));
             }
 
+            // Prints new line to console for formatting purposes
             System.out.println();
 
-            // insert all publishers read from a file and inserted into the publishers table
+            // Populate publishers table by scanning the publisher names from publishers.txt
             while (publisherScan.hasNextLine()) {
                 String next = publisherScan.nextLine();
                 statement.execute("Insert INTO publishers(publisherName) VALUES ('" + next + "');");
                 System.out.println("Insert INTO publishers(publisherName) VALUES ('" + next + "');");
             }
+
+            // Prints new line to console for formatting purposes
             System.out.println();
 
+            // SQL statement that selects all publishers from publishers table
             ResultSet rs3 = statement.executeQuery("SELECT * FROM publishers;");
+
+            // Print out the query to console
             System.out.println("SELECT * FROM publishers;\n");
             System.out.printf("%-20s %-20s \n", "publisherID", "publisherName");
             System.out.println();
 
-            // iterate through author IDs and add them to array list
+            // Prints all the publishers with their ID and name from the publishers table to the console
             while (rs3.next()) {
                 System.out.printf("%-20s %-20s \n", rs3.getString("publisherID"), rs3.getString("publisherName"));
             }
+
+            // Printes new line to console for formatting purposes
             System.out.println();
-
-            // Create author ID and arrayList of author IDs
-            int AIDHold = 0; // author ID hold
-            ArrayList<Integer> AID = new ArrayList<Integer>();
-
-            // Select all author IDs from authors table
-            ResultSet publisherResultSet = statement.executeQuery("SELECT * FROM publishers;");
-            // iterate through author IDs and add them to array list
-            while (publisherResultSet.next()) {
-                AID.add(publisherResultSet.getInt("publisherID"));
-//                System.out.println(publisherResultSet.getString("authorID"));
-            }
-            System.out.println();
-
 
             // instantiate arrayList and temp variable for publisher IDs
             int PIhold = 0;
@@ -181,6 +173,7 @@ public class JDBC {
                 PIhold++;
             }
 
+            // Formatting purposes
             System.out.println();
 
 
@@ -194,6 +187,20 @@ public class JDBC {
 
             }
 
+            System.out.println();
+            // Create author ID and arrayList of author IDs
+            int AIDHold = 0; // author ID hold
+            ArrayList<Integer> AID = new ArrayList<Integer>();
+
+            // SQL Statement that selects all author IDs from authors table
+            ResultSet publisherResultSet = statement.executeQuery("SELECT * FROM publishers;");
+            // iterate through author IDs and add them to array list
+            while (publisherResultSet.next()) {
+                AID.add(publisherResultSet.getInt("publisherID"));
+
+            }
+
+            // Prints new line to console for formatting purposes
             System.out.println();
 
             // iterate through the isbn list file and insert them into the author isbn table
@@ -225,7 +232,7 @@ public class JDBC {
 
 
     public void selectAllauthors() {
-        // Step 1
+        
         System.out.println("select all authors from the authors table alphabetically\n");
         try {
             ResultSet authorPrint = statement.executeQuery("Select last, first from authors order by last, first;");
