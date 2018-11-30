@@ -18,22 +18,35 @@ import java.sql.SQLException;
  */
 
 public class JDBC {
-    public String username = "root";
-    public String password = "password";
+    public String username = "root"; //username of the MySQL Server
+    public String password = "password"; //password of the MySQL Server
 
     static Connection connection = null;
     static Statement statement = null;
 
+    /**
+     * Method that will login and connect to your MySQL Server
+     */
     public void loginToDB() {
-        // Enter user and password for sql connection. Change this to make it work locally.
+
         try {
+            // Connects to MySQL Database... make sure url, username, and password are all correct for this to work
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306?useSSL=false", username, password);
             statement = connection.createStatement();
         } catch (SQLException ex) {
+            // Error statement if you have connection issues
             System.out.println("Connection Error. Check username, password, or localhost connection.");
         }
     }
 
+    /**
+     * Method that creates a database with four tables and populates them by scanning in text files.
+     * Tables:
+     * 1. authors
+     * 2. authorISBN
+     * 3. titles
+     * 4. publishers
+     */
     public void populateTables() {
 
         // Initialize authorScanners to parse data files containing information to populate into tables
