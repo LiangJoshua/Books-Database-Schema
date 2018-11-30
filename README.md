@@ -15,14 +15,14 @@ https://www.oracle.com/technetwork/java/index.html
 https://dev.mysql.com/downloads/mysql/
 ````
 
-3) Open Terminal and run JDBC.java in correct directory
+3) Open Terminal and run JDBC.java in correct directory (FOR MAC)
 ````
 MacBookAIr:~ macadmin$ cd /Users/macadmin/Desktop/GitHub/Books-Database-Schema/CS157A-project/src 
 MacBookAIr:src macadmin$ javac *.java
 MacBookAIr:src macadmin$ java -cp mysql-connector-java-8.0.13.jar:. JDBC
 ````
 
-3) Open Terminal and run JDBC.java in correct directory (FOR MAC)
+3) Open Terminal and run JDBC.java in correct directory (FOR WINDOWS)
 ````
 Windows:~ macadmin$ cd /Users/macadmin/Desktop/GitHub/Books-Database-Schema/CS157A-project/src 
 Windows:src macadmin$ javac JDBC.java
