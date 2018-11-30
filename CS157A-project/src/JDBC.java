@@ -30,7 +30,7 @@ public class JDBC {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306?useSSL=false", username, password);
             statement = connection.createStatement();
         } catch (SQLException ex) {
-            System.out.println("Username or password incorrect.");
+            System.out.println("Connection Error. Check username, password, or localhost connection.");
         }
     }
 
@@ -403,9 +403,9 @@ public class JDBC {
         try {
             // Step 7
             System.out.println("add new publish (adds new publisher and update new information for other tables)");
-            statement.execute("Insert INTO publishers(publisherName) VALUES ('" + "CS157A Group 9" + "');");
+            statement.execute("Insert INTO publishers(publisherName) VALUES ('" + "CS157A Group 1" + "');");
             System.out.println();
-            System.out.println("Insert INTO publishers(publisherName) VALUES ('" + "CS157A Group 9" + "');");
+            System.out.println("Insert INTO publishers(publisherName) VALUES ('" + "CS157A Group 1" + "');");
 
             ResultSet beforeUp = statement.executeQuery("select * from publishers;");
             System.out.println("select * from publishers;");
@@ -437,8 +437,8 @@ public class JDBC {
         try {
             // Step 8
             System.out.println("edit/update the existing information about a publisher");
-            System.out.println("UPDATE publishers SET publisherName = 'Kate Dinh' where publisherID = '16';");
-            statement.execute("UPDATE publishers SET publisherName = 'Kate Dinh' where publisherID = '16';");
+            System.out.println("UPDATE publishers SET publisherName = 'CS157A Group 9' where publisherID = '16';");
+            statement.execute("UPDATE publishers SET publisherName = 'CS157A Group 9' where publisherID = '16';");
 
             ResultSet afterUp = statement.executeQuery("select * from publishers where publisherID = 16;");
             System.out.println("select * from publishers where publisherID = 16;");
@@ -465,7 +465,7 @@ public class JDBC {
 
         try {
 
-            System.out.println("Attempting to log into localhost!");
+            System.out.println("Logging into MySQL...");
             // Enter user and password for sql connection. Change this to make it work locally.
             JDBC.loginToDB();
 
