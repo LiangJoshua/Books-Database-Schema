@@ -1,5 +1,6 @@
 # Books-Database-Schema
 ## Instructions to run locally 
+### Mac0S
 
 1) Clone repository 
 
