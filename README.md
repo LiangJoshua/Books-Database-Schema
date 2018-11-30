@@ -21,3 +21,10 @@ MacBookAIr:~ macadmin$ cd /Users/macadmin/Desktop/GitHub/Books-Database-Schema/C
 MacBookAIr:src macadmin$ javac *.java
 MacBookAIr:src macadmin$ java -cp mysql-connector-java-8.0.13.jar:. JDBC
 ````
+
+3) Open Terminal and run JDBC.java in correct directory (FOR MAC)
+````
+Windows:~ macadmin$ cd /Users/macadmin/Desktop/GitHub/Books-Database-Schema/CS157A-project/src 
+Windows:src macadmin$ javac JDBC.java
+Window:src macadmin$ java -cp .;mysql-connector-java-8.0.13.jar JDBC
+````
