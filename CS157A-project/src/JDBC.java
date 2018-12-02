@@ -31,7 +31,7 @@ public class JDBC {
 
         try {
             // Connects to MySQL Database... make sure url, username, and password are all correct for this to work
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306?useSSL=false", username, password);
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306?autoReconnect=true&useSSL=false", username, password);
             statement = connection.createStatement();
         } catch (SQLException ex) {
             // Error statement if you have connection issues
