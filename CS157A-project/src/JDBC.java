@@ -230,7 +230,9 @@ public class JDBC {
 
     }
 
-
+    /**
+    *Method that alphabetically selects and the prints authors by last name first. 
+    */
     public void selectAllauthors() {
 
         System.out.println("select all authors from the authors table alphabetically\n");
@@ -248,7 +250,10 @@ public class JDBC {
         }
 
     }
-
+    /**
+    *Method that selects and prints list of publishers names.  
+    *
+    */
     public void selectPublishers() {
         // Step 2
         System.out.println("Select all publishers from the publishers table\n");
@@ -266,7 +271,9 @@ public class JDBC {
         }
 
     }
-
+    /**
+    *Method lists information of specified publisher based on publisherName. 
+    */
     public void specificPublisher() {
         // Step 3
         System.out.println("select a specific publisher and list all books published by the publisher (include the title, year, and ISBN number. order the information alphabetically by title)");
@@ -297,7 +304,9 @@ public class JDBC {
         }
 
     }
-
+    /**
+    *Method that inserts author into database of matching authorID, then looks for specified authorID
+    */
     public void addAuthor() {
         try {
             // Step 4
@@ -328,7 +337,9 @@ public class JDBC {
         }
     }
 
-
+   /**
+    *Method updates author based on specified authorID.
+    */
     public void editAuthor() {
         try {
             // Step 5
@@ -374,7 +385,9 @@ public class JDBC {
             e.printStackTrace();
         }
     }
-
+    /**
+    *Method adds book title and corresponding info for specified publisherID
+    */
     public void addTitle() {
         try {
             // Step 6
@@ -418,7 +431,9 @@ public class JDBC {
             e.printStackTrace();
         }
     }
-
+    /**
+    *Method adds publisher and corresponding data to database. 
+    */
     public void addPublisher() {
         try {
             // Step 7
@@ -452,7 +467,9 @@ public class JDBC {
             e.printStackTrace();
         }
     }
-
+    /**
+    *Method updates publishers name of specified publisherID 
+    */
     public void editPublisher() {
         try {
             // Step 8
