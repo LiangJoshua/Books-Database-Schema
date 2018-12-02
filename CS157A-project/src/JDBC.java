@@ -232,7 +232,7 @@ public class JDBC {
 
 
     public void selectAllauthors() {
-        
+
         System.out.println("select all authors from the authors table alphabetically\n");
         try {
             ResultSet authorPrint = statement.executeQuery("Select last, first from authors order by last, first;");
