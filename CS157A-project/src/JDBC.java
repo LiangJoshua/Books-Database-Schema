@@ -176,11 +176,12 @@ public class JDBC {
             // Formatting purposes
             System.out.println();
 
-
+            //Select all columns from title 
             ResultSet rs4 = statement.executeQuery("select * from title;");
+            // Print out the query to console
             System.out.println("select * from title;\n");
             System.out.printf("%-15s %-40s %-20s %-20s %-20s %-20s \n", "isbn", "title", "editionNumber", "Year", "publisherID", "price");
-
+            // Prints all the titles with isbn, title, edition name, year, publisher ID, and price
             while (rs4.next()) {
                 System.out.printf("%-15s %-40s %-20s %-20s %-20s %-20s \n", rs4.getString("isbn"), rs4.getString("title"),
                         rs4.getString("editionNumber"), rs4.getString("Year"), rs4.getString("publisherID"), rs4.getString("price"));
@@ -211,12 +212,13 @@ public class JDBC {
                 AIDHold++;
             }
             System.out.println();
-
+            //Select all columns from authorISBN
             ResultSet rs2 = statement.executeQuery("select * from authorISBN;");
+            // Print out the query to console
             System.out.println("select * from authorISBN;\n");
             System.out.println();
             System.out.printf("%-20s %-20s \n", "authorID", "isbn");
-
+            // Prints all the authorID, isbn
             while (rs2.next()) {
                 System.out.printf("%-20s %-20s \n", rs2.getString("authorID"), rs2.getString("isbn"));
             }
