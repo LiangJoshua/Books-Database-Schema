@@ -11,7 +11,6 @@ git clone https://github.com/LiangJoshua/Books-Database-Schema.git
 1) Setting environtment correctly
 ```
 CLASSPATH=$CLASSPATH:/usr/share/java/mysql-connector-java.jar
-
 ```
 
 ### Then (absolute Unix pathname)
