@@ -312,7 +312,7 @@ public class JDBC {
     */
     public void addAuthor() {
         try {
-            // Step 4
+
             System.out.println("adds new author and other information related to other tables");
             statement.execute("Insert INTO authors(first, last) VALUES ('" + "Joshua" + "','" + "Liang" + "')");
             System.out.println("Insert INTO authors(first, last) VALUES ('" + "Joshua" + "','" + "Liang" + "')\n");
@@ -345,14 +345,14 @@ public class JDBC {
     */
     public void editAuthor() {
         try {
-            // Step 5
+
             System.out.println();
             System.out.println("edit/update the existing information about an author i..e the name");
             statement.execute("UPDATE authors SET last='Leinbach', first='Justin' where authorID=16;");
             System.out.println();
             System.out.println("UPDATE authors SET last='Leinbach', first='Justin' where authorID=16;\n");
 
-            // Step 5 (continued)
+
             // check to make sure the update happened
             ResultSet afterUpdate = statement.executeQuery("Select * from authors where authorID = 16;");
             System.out.println("Select * from authors where authorID = 16;\n");
@@ -439,7 +439,7 @@ public class JDBC {
     */
     public void addPublisher() {
         try {
-            // Step 7
+            
             System.out.println("add new publish (adds new publisher and update new information for other tables)");
             statement.execute("Insert INTO publishers(publisherName) VALUES ('" + "CS157A Group 1" + "');");
             System.out.println();
