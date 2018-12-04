@@ -12,7 +12,6 @@ git clone https://github.com/LiangJoshua/Books-Database-Schema.git
 ```
 CLASSPATH=$CLASSPATH:/usr/share/java/mysql-connector-java.jar
 ```
-
 ### Then (absolute Unix pathname)
 ```
 /Users/HTENYWGGG/Documents/CS157A_Project/Books-Database-Schema/CS157A-project
