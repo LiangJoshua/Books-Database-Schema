@@ -239,11 +239,12 @@ public class JDBC {
 
         System.out.println("select all authors from the authors table alphabetically\n");
         try {
+        	// SQL statement that selects all authors from authors table by last name 
             ResultSet authorPrint = statement.executeQuery("Select last, first from authors order by last, first;");
             System.out.println("Select last, first from authors order by last, first;\n");
             System.out.printf("%-20s %s\n", "LastName", "FirstName");
             System.out.println();
-
+            // Prints all the authors by last name, to the console
             while (authorPrint.next()) {
                 System.out.printf("%-20s %s\n", authorPrint.getString("last"), authorPrint.getString("first"));
             }
