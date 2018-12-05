@@ -439,7 +439,7 @@ public class JDBC {
     */
     public void addPublisher() {
         try {
-            
+
             System.out.println("add new publish (adds new publisher and update new information for other tables)");
             statement.execute("Insert INTO publishers(publisherName) VALUES ('" + "CS157A Group 1" + "');");
             System.out.println();
